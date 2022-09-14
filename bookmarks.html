@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz-App</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="./components/bookmark/bookmark.js"
+      defer
+      type="module"
+    ></script>
   </head>
   <body>
     <header class="header">
       <h1 class="header__title">Bookmarks</h1>
     </header>
     <main>
-      <ul class="card-list">
-        <li class="card-list__item">
+      <ul class="card-list" data-js="bookmark__cardContainer">
+        <!--<li class="card-list__item">
           <article class="card">
             <h2 class="card__question">
               Daniel Radcliffe became a global star in the film industry due to
@@ -46,7 +51,7 @@
               </button>
             </div>
           </article>
-        </li>
+        </li> -->
       </ul>
     </main>
 

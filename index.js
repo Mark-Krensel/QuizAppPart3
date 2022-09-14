@@ -1,17 +1,53 @@
-const answerButton = document.querySelector('[data-js="answer-button"]');
-const answer = document.querySelector('[data-js="card-answer"]');
-const bookmarkButton = document.querySelector('[data-js="bookmark-button"]');
+// create cards
+import createCard from "./components/card/card.js";
+const cardContainer = document.querySelector('[data-js="card-list"]');
 
-answerButton.addEventListener("click", () => {
-  if (answer.classList.contains("card__answer--active")) {
-    answer.classList.remove("card__answer--active");
-    answerButton.textContent = "Show answer";
-  } else {
-    answer.classList.add("card__answer--active");
-    answerButton.textContent = "Hide answer";
-  }
+const cards = [
+  {
+    question: "Question 1",
+    answer: "Answer 1",
+    tag: "Tag 1",
+    bookmarked: "true",
+  },
+  {
+    question: "Question 2",
+    answer: "Answer 2",
+    tag: "Tag 2",
+    bookmarked: "false",
+  },
+  {
+    question: "Question 3",
+    answer: "Answer 3",
+    tag: "Tag 3",
+    bookmarked: "true",
+  },
+];
+cards.forEach((card) => {
+  const cardElement = createCard(card.question, card.answer, card.tag);
+  cardContainer.append(cardElement);
 });
+/*
+const newcard1 = createCard(
+  `In the Kingdom Heart series who provides the english voice for
+Master Eraqus?`,
+  `Mark Hamill`,
+  `kingdomheart`
+);
+cardContainer.append(newcard1);
 
-bookmarkButton.addEventListener("click", () => {
-  bookmarkButton.classList.toggle("bookmark--active");
-});
+const newcard2 = createCard(
+  `Daniel Radcliffe became a global star in the film industry due to
+  his performance in which film franchise?`,
+  `Harry Potter`,
+  `hewhomustnotbenamed`
+);
+cardContainer.append(newcard2);
+
+const newcard3 = createCard(
+  `Which former US president was nicknamed &quot;Teddy&quot; after he
+  refused to shoot a defenseless black bear?`,
+  `Theodore Roosevelt`,
+  `teddybear`
+);
+cardContainer.append(newcard3);
+*/
